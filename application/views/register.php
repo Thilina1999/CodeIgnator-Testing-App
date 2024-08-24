@@ -1,9 +1,7 @@
 <?php include 'partials/header.php' ?>
 
 	<h2>
-		Blog Post
+		Register
 	</h2>
 
 <?php include 'partials/footer.php' ?>
-
-
