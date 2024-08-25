@@ -3,25 +3,27 @@
 <hr>
 <div class="container px-5">
     <h2>Register</h2>
+    <?php echo validation_errors(); ?>
     <?php echo form_open('Register/RegisterUser'); ?>
     <!-- Email input -->
     <div data-mdb-input-init class="form-outline mb-4">
-        <input type="input" id="name" class="form-control" />
+        <input type="input" id="name" class="form-control" name="name" />
         <label class="form-label" for="name">Enter the Name</label>
     </div>
     <div data-mdb-input-init class="form-outline mb-4">
-        <input type="email" id="form2Example1" class="form-control" />
-        <label class="form-label" for="form2Example1">Email address</label>
+        <input type="email" id="email" class="form-control" name="email" />
+        <label class="form-label" for="email">Email address</label>
     </div>
 
     <!-- Password input -->
     <div data-mdb-input-init class="form-outline mb-4">
-        <input type="password" id="form2Example2" class="form-control" />
-        <label class="form-label" for="form2Example2">Password</label>
+        <input type="password" id="password" class="form-control" name="password"/>
+        <label class="form-label" for="password">Password</label>
     </div>
-
-    <!-- 2 column grid layout for inline styling -->
-
+    <div data-mdb-input-init class="form-outline mb-4">
+        <input type="password" id="passwordAgain" class="form-control" name="passwordAgain" />
+        <label class="form-label" for="passwordAgain">Password Again</label>
+    </div>
 
     <!-- Submit button -->
     <button type="submit" data-mdb-button-init data-mdb-ripple-init
