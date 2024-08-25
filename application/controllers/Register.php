@@ -26,6 +26,9 @@ class Register extends CI_Controller
                 if ($response){
                     $this->session->set_flashdata('msg','your Registered Successfuly');
                     redirect('Home/Login');
+                }else{
+                    $this->session->set_flashdata('msg','your Registered UnSuccessfuly');
+                    redirect('Home/Register');
                 }
         }
 

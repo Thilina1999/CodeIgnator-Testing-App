@@ -3,7 +3,9 @@
 <hr>
 <div class="container px-5">
 
-
+    <?php if ($this->session->flashdata('msg')) {
+        echo "<h3>".$this->session->flashdata('msg')."</h3>";
+    } ?>
 
     <h2>Register</h2>
     <?php echo validation_errors(); ?>
