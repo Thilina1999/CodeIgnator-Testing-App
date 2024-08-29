@@ -19,8 +19,8 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class="nav-link active" aria-current="page" href="<?php echo base_url('index.php/Home/login'); ?>">Login</a>
-					<a class="nav-link" href="<?php echo base_url('index.php/Home/register') ?>">Register</a>
+					<a class="nav-link active" aria-current="page" href="<?php echo base_url('Home/login'); ?>">Login</a>
+					<a class="nav-link" href="<?php echo base_url('Home/register') ?>">Register</a>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
 							aria-expanded="false">

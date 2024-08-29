@@ -1,8 +1,8 @@
 <?php include 'partials/header.php' ?>
 <hr>
 <div class="container px-5">
-    <?php if ($this->session->flashdata('msg')) {
-        echo "<h3>".$this->session->flashdata('msg')."</h3>";
+    <?php if ($this->session->flashdata('errmsg')) {
+        echo "<h3>".$this->session->flashdata('errrmsg')."</h3>";
     } ?>
     <h2>Login</h2>
     <?php echo validation_errors(); ?>

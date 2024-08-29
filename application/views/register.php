@@ -9,11 +9,16 @@
 
     <h2>Register</h2>
     <?php echo validation_errors(); ?>
-    <?php echo form_open('Register/RegisterUser'); ?>
+    <form action="<?php echo site_url('Register/RegisterUser'); ?>" enctype="multipart/form-data" method="post">
+
     <!-- Email input -->
     <div data-mdb-input-init class="form-outline mb-4">
         <input type="input" id="name" class="form-control" name="name" />
         <label class="form-label" for="name">Enter the Name</label>
+    </div>
+    <div data-mdb-input-init class="form-outline mb-4">
+        <input type="input" id="userName" class="form-control" name="userName" />
+        <label class="form-label" for="userName">Enter the User Name</label>
     </div>
     <div data-mdb-input-init class="form-outline mb-4">
         <input type="email" id="email" class="form-control" name="email" />
@@ -33,8 +38,7 @@
     <!-- Submit button -->
     <button type="submit" data-mdb-button-init data-mdb-ripple-init
         class="btn btn-primary btn-block mb-4">Register</button>
-    <?php echo form_close() ?>
-
+        </form>
 </div>
 
 <?php include 'partials/footer.php' ?>

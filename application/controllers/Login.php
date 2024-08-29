@@ -21,7 +21,7 @@ class Login extends CI_Controller
             if ($response) {
                 echo "succese";
             } else {
-                echo "fail";
+                $this->session->set_flashdata("errmsg","Wrong Email Password");
             }
         }
     }
