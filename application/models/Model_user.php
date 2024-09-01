@@ -4,7 +4,7 @@ class Model_user extends CI_Model
 {
     function insert_user($data)
     {
-        $data['password'] = sha1($data['password']);
+        $data['password'] = password_hash($data['password'], PASSWORD_BCRYPT);
         return $this->db->insert('user', $data);
     }
 
@@ -21,7 +21,8 @@ class Model_user extends CI_Model
         //     print_r("issue1");
         //     return false;
         // }
-        $data['password'] = sha1($data['password']);
+        // $data['password'] = sha1($data['password']);
+        $data['password'] = password_hash($data['password'], PASSWORD_BCRYPT);
         $query = $this->db->get_where('user', $data);
 
         if ($query->num_rows() > 0) {

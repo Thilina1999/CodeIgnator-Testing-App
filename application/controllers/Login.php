@@ -14,14 +14,15 @@ class Login extends CI_Controller
         ) ;
 
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('Register');
+            $this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
+            $this->load->view('login');
         } else {
             $this->load->model('Model_user');
             $response = $this->Model_user->login_user($data);
             if ($response) {
                 echo "succese";
             } else {
-                $this->session->set_flashdata("errmsg","Wrong Email Password");
+                $this->session->set_flashdata("errmsgLogin","Invalid Credentials");
             }
         }
     }

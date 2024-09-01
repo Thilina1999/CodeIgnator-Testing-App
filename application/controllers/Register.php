@@ -5,7 +5,7 @@ class Register extends CI_Controller
     public function RegisterUser()
     {
         $this->form_validation->set_rules('name', 'Name', 'required');
-        $this->form_validation->set_rules('userName', 'User Name', 'required');
+        $this->form_validation->set_rules('userName', 'User Name', 'required|is_unique[user.email]');
         $this->form_validation->set_rules('password', 'Password', 'required');
         $this->form_validation->set_rules('passwordAgain', 'Password Confirmation', 'required|matches[password]');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[user.email]');
@@ -19,18 +19,19 @@ class Register extends CI_Controller
 
         if ($this->form_validation->run() == FALSE)
         {
-                $this->load->view('Register');
+            $this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
+            $this->load->view('Register');
         }
         else
         {
                 $this->load->model('Model_user');
                 $response = $this->Model_user->insert_user($data);
                 if ($response){
-                    $this->session->set_flashdata('msg','your Registered Successfuly');
-                    redirect('Home/Login');
+                    $this->session->set_flashdata('msgRister','your Registered Successfuly');
+                    redirect('login');
                 }else{
-                    $this->session->set_flashdata('msg','your Registered UnSuccessfuly');
-                    redirect('Home/Register');
+                    $this->session->set_flashdata('msgRister','your Registered UnSuccessfuly');
+                    redirect('signup');
                 }
         }
 
