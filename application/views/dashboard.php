@@ -34,9 +34,9 @@
 </style>
 
 <section class="intro homeDashBorad">
-<?php if ($this->session->flashdata('blogmsg')) {
-    echo "<div class=\"alert alert-success\" role=\"alert\">".$this->session->flashdata('blogmsg')."</div>";
-} ?>
+    <?php if ($this->session->flashdata('blogmsg')) {
+        echo "<div class=\"alert alert-success\" role=\"alert\">" . $this->session->flashdata('blogmsg') . "</div>";
+    } ?>
     <div class="bg-image h-100">
         <div class="mask h-100">
             <div class="container">
@@ -70,26 +70,37 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Monsters</td>
-                                                <td>Status</td>
-                                                <td>122122</td>
-                                                <td>
-                                                    <a href="<?php echo site_url('/updateBlog/3'); ?>">
-                                                    <button type="button" class="btn btn-danger btn-sm px-3">
-                                                        <i class="bi bi-box-arrow-up-right"></i>
-                                                    </button>
-                                                    </a>
-                                                </td>
-                                                <td>
-                                                    <a href="<?php echo site_url('/deleteBlog/3'); ?>">
-                                                    <button type="button" class="btn btn-danger px-3">
-                                                        <i class="bi bi-trash-fill"></i>
-                                                    </button>
-                                                    </a>
-                                                </td>
-                                            </tr>
+                                            <?php
+                                            $count = 1;
+                                            if ($result) {
+                                                foreach ($result as $key => $value) {
+                                                    echo "                                            <tr>
+                                                    <td>".$count."</td>
+                                                    <td>".$value['blog_title']."</td>
+                                                    <td>".(($value['status'] == 1) ? 'Publish' : 'Unpublish')."</td>
+                                                    <td>".$value['created_on']."</td>
+                                                    <td>
+                                                        <a href=\"<?php echo site_url('/updateBlog/3'); ?>\">
+                                                        <button type=\"button\" class=\"btn btn-danger btn-sm px-3\">
+                                                            <i class=\"bi bi-box-arrow-up-right\"></i>
+                                                        </button>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href=\"<?php echo site_url('/deleteBlog/3'); ?>\">
+                                                        <button type=\"button\" class=\"btn btn-danger px-3\">
+                                                            <i class=\"bi bi-trash-fill\"></i>
+                                                        </button>
+                                                        </a>
+                                                    </td>
+                                                </tr>";
+                                                $count++;
+                                                }
+                                            } else {
+                                                echo "<tr class=\"text-center\"><td colspan='6'>No Record Found</></tr>";
+                                            }
+                                            ?>
+
                                         </tbody>
                                     </table>
                                 </div>

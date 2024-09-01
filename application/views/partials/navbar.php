@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg shadow-lg fixed-top bg-light navbar-scroll navbar-light">
     <div class="container">
-        <a class="navbar-brand nav-link ms-auto align-items-center mx-2 h3" href="#">Blog Post</a>
+        <a class="navbar-brand nav-link ms-auto align-items-center mx-2 h3" href="<?php echo site_url('home'); ?>">Blog Post</a>
         <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
             data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">

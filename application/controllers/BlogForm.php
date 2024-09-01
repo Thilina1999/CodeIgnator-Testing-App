@@ -6,7 +6,6 @@ class BlogForm extends CI_Controller
     {
         if (isset($_SESSION['userName'])) {
             $this->load->view('addform');
-
         } else {
             redirect('login');
         }
