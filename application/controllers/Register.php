@@ -2,6 +2,10 @@
 
 class Register extends CI_Controller
 {
+    public function register()
+	{
+		$this->load->view('register');
+	}
     public function RegisterUser()
     {
         $this->form_validation->set_rules('name', 'Name', 'required');
@@ -25,6 +29,7 @@ class Register extends CI_Controller
         else
         {
                 $this->load->model('Model_user');
+                $data['password'] = password_hash($data['password'], PASSWORD_BCRYPT);
                 $response = $this->Model_user->insert_user($data);
                 if ($response){
                     $this->session->set_flashdata('msgRister','your Registered Successfuly');
