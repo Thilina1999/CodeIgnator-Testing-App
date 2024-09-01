@@ -7,3 +7,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['login'] = '/Login/Login';
 $route['signup'] = '/Register/Register';
+$route['home'] = '/Home/index';

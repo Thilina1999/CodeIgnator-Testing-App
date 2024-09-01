@@ -1,7 +1,7 @@
 <?php include 'partials/header.php' ?>
 
-<?php if ($this->session->flashdata('errmsgLogin')) {
-    echo "<div class=\"alert alert-danger\" role=\"alert\">".$this->session->flashdata('errmsgLogin')."</div>";
+<?php if ($this->session->flashdata('msgLogin')) {
+    echo "<div class=\"alert alert-danger\" role=\"alert\">".$this->session->flashdata('msgLogin')."</div>";
 } ?>
 
 <?php if ($this->session->flashdata('msgRister')) {

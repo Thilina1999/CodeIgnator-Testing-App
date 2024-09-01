@@ -24,12 +24,15 @@ class Login extends CI_Controller
             $response = $this->Model_user->login_user($email);
             if (count($response) > 0) {
                 if (password_verify($password, $response[0]->password)) {
-                    echo 'succese';
+                    $this->session->set_flashdata('msgLogin','Login Succesfull');
+                    $this->session->set_userdata('name', $response[0]->name);
+                    $this->session->set_userdata('userName', $response[0]->userName);
+                    redirect('home');
                 } else {
                     echo 'Invalide Password';
                 }
             } else {
-                $this->session->set_flashdata("errmsgLogin","Invalid Credentials");
+                $this->session->set_flashdata("msgLogin","Invalid Credentials");
             }
         }
     }

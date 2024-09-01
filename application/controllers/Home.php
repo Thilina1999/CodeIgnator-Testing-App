@@ -5,7 +5,11 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('home');
+		if(isset($_SESSION['userName'])){
+			$this->load->view('home');
+		}else {
+			redirect('/login');
+		}
 	}
 
 
