@@ -15,7 +15,7 @@
                 <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                     <div class="card shadow-lg" style="border-radius: 15px;">
                         <div class="card-body p-5">
-                            <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+                            <h2 class="text-uppercase text-center mb-5">Login</h2>
                             <form action="<?php echo site_url('loginUser'); ?>" enctype="multipart/form-data" method="post">
                                 <div data-mdb-input-init class="form-floating mb-4">
                                     <input type="email" id="email" class="form-control"
@@ -42,9 +42,7 @@
 
                                 <p class="text-center text-muted mt-5 mb-0">Have did not have an account? <a href="<?php echo base_url('signup'); ?>"
                                         class="fw-bold text-body"><u>Register here</u></a></p>
-
                             </form>
-
                         </div>
                     </div>
                 </div>

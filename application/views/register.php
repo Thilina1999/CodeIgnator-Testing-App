@@ -29,17 +29,12 @@
                                     <?php echo form_error('userName'); ?>
 
                                 </div>
-
-
                                 <div data-mdb-input-init class="form-floating mb-4">
                                     <input type="email" id="email" class="form-control"
                                         name="email" />
                                     <label class="form-label" for="email">Email</label>
                                     <?php echo form_error('email'); ?>
-
                                 </div>
-
-
                                 <div data-mdb-input-init class="form-floating mb-4">
                                     <input type="password" id="password" class="form-control"
                                         name="password" />

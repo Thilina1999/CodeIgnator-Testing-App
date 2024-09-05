@@ -20,7 +20,7 @@
 <div class=\"card\">
 					<div class=\"card-body\">
 						<h5 class=\"card-title\">" . $value['blog_title'] . "</h5>
-						<p class=\"card-title\">Publish On " . $value['created_on'] . "</p>
+						<p class=\"card-title\">Publish On: " . $value['created_on'] . "</p>
 					</div>
 					<div class=\"card-body\">
 					<p class=\"card-text\">" . $value['blog_dec'] . "</p>

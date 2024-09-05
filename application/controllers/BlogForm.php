@@ -42,7 +42,7 @@ class BlogForm extends CI_Controller
     }
 
     public function edit($id)   {
-        print_r($id);
+        // print_r($id);
     }
 
     public function delete($id)   {

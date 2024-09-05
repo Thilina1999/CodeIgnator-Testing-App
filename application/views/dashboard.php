@@ -75,26 +75,26 @@
                                             if ($result) {
                                                 foreach ($result as $key => $value) {
                                                     echo "                                            <tr>
-                                                    <td>".$count."</td>
-                                                    <td>".$value['blog_title']."</td>
-                                                    <td>".(($value['status'] == 1) ? 'Publish' : 'Unpublish')."</td>
-                                                    <td>".$value['created_on']."</td>
+                                                    <td>" . $count . "</td>
+                                                    <td>" . $value['blog_title'] . "</td>
+                                                    <td>" . (($value['status'] == 1) ? 'Publish' : 'Unpublish') . "</td>
+                                                    <td>" . $value['updated_time'] . "</td>
                                                     <td>
-                                                        <a href=\"<?php echo site_url('/updateBlog/3'); ?>\">
+                                                        <a href=\"<?php echo site_url('updateBlog/3'); ?>\">
                                                         <button type=\"button\" class=\"btn btn-danger btn-sm px-3\">
                                                             <i class=\"bi bi-box-arrow-up-right\"></i>
                                                         </button>
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        <a href=\"<?php echo site_url('/deleteBlog/3'); ?>\">
+                                                        <a href=\"#.\" class=\"delete\" data-id='" . $value['id'] . "'>
                                                         <button type=\"button\" class=\"btn btn-danger px-3\">
                                                             <i class=\"bi bi-trash-fill\"></i>
                                                         </button>
                                                         </a>
                                                     </td>
                                                 </tr>";
-                                                $count++;
+                                                    $count++;
                                                 }
                                             } else {
                                                 echo "<tr class=\"text-center\"><td colspan='6'>No Record Found</></tr>";
@@ -113,6 +113,25 @@
     </div>
 </section>
 
-
+<script type="text/javascript">
+    $(".delete").click(function () {
+        var delete_id = $(this).attr('data-id');
+        var bool = confirm('are you sure to delete blog?')
+        console.log(delete_id)
+        if (bool) {
+            $.ajax({
+                url: '<?php echo site_url('deleteBlog/'); ?>' + delete_id,
+                type: 'POST',
+                data: {},
+                success: function (response) {
+                    console.log('AJAX call succeeded:', response);
+                },
+                error: function (xhr, status, error) {
+                    console.log('AJAX call failed:', status, error);
+                }
+            })
+        }
+    })
+</script>
 
 <?php include 'partials/footer.php' ?>
