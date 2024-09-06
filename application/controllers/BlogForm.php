@@ -48,11 +48,11 @@ class BlogForm extends CI_Controller
     public function delete($id)
 	{
 		$this->load->model('Model_blog');
-		$res = $this->Model_blog->insert_blog->delete_blog($id);
+		$res = $this->Model_blog->delete_blog($id);
 		if ($res) {
-			return "Delete Succesefuly";
+			echo "delete";
 		}else {
-			return "Delete Unsuccefuly";
+			echo "notdelete";
 		}
 	}
 

@@ -16,7 +16,7 @@ class Model_blog extends CI_Model
     }
 
 	function delete_blog($id) {
-		return $this->db->query("DELETE FROM 'article' WHERE 'user_id' = ''$id'");
+		return $this->db->query("DELETE FROM `article` WHERE id = $id");
 	}
 
 }

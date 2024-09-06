@@ -123,7 +123,12 @@
                 type: 'POST',
                 data: {},
                 success: function (response) {
-                    console.log('AJAX call succeeded:', response);
+					console.log(response);
+					if(response == "delete"){
+						location.reload();
+					}else if(response == "notdelete") {
+						alert("Cannot Delete Something went wrong");
+					}
                 },
                 error: function (xhr, status, error) {
                     console.log('AJAX call failed:', status, error);
