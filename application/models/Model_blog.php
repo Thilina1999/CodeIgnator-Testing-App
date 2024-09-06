@@ -15,4 +15,8 @@ class Model_blog extends CI_Model
         return $this->db->insert('article', $data);
     }
 
+	function delete_blog($id) {
+		return $this->db->query("DELETE FROM 'article' WHERE 'user_id' = ''$id'");
+	}
+
 }

@@ -117,7 +117,6 @@
     $(".delete").click(function () {
         var delete_id = $(this).attr('data-id');
         var bool = confirm('are you sure to delete blog?')
-        console.log(delete_id)
         if (bool) {
             $.ajax({
                 url: '<?php echo site_url('deleteBlog/'); ?>' + delete_id,
