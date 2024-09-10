@@ -16,4 +16,5 @@ $route['addForm'] = '/BlogForm/index';
 $route['addBlog'] = '/BlogForm/add';
 $route['updateBlog/(:num)'] = 'BlogForm/edit/$1';
 $route['deleteBlog/(:num)'] = 'BlogForm/delete/$1';
+$route['updateBlog'] = 'BlogForm/update';
 

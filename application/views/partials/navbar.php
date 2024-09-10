@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg shadow-lg fixed-top bg-light navbar-scroll navbar-light">
+<nav class="navbar sticky navbar-expand-lg shadow-lg fixed-top bg-light px-20 navbar-scroll navbar-light">
     <div class="container">
         <a class="navbar-brand nav-link ms-auto align-items-center mx-2 h3" href="<?php echo site_url('home'); ?>">Blog Post</a>
         <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"

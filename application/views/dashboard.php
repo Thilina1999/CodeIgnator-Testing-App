@@ -33,7 +33,7 @@
     }
 </style>
 
-<section class="intro homeDashBorad">
+<section class="px-20 pt-5 homeDashBorad">
     <?php if ($this->session->flashdata('blogmsg')) {
         echo "<div class=\"alert alert-success\" role=\"alert\">" . $this->session->flashdata('blogmsg') . "</div>";
     } ?>
@@ -81,13 +81,13 @@
                                                     <td>" . $value['updated_time'] . "</td>
                                                     <td>
                                                         <a href='".site_url('/updateBlog/'.$value['id'])."'>
-                                                        <button type=\"button\" class=\"btn btn-danger btn-sm px-3\">
+                                                        <button type=\"button\" class=\"btn btn-danger px-3\">
                                                             <i class=\"bi bi-box-arrow-up-right\"></i>
                                                         </button>
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        <a href=\"\">
+                                                        <a href=\"\" class=\"delete\" data-id='" . $value['id'] . "'>
                                                         <button type=\"button\" class=\"btn btn-danger px-3\">
                                                             <i class=\"bi bi-trash-fill\"></i>
                                                         </button>

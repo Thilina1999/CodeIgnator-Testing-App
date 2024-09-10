@@ -7,7 +7,7 @@
 	}
 </style>
 
-<div class="container homeBlog">
+<div class="container px-20 pt-5 homeBlog">
 	<?php if ($this->session->flashdata('msgLogin')) {
 		echo "<div class=\"alert alert-success\" role=\"alert\">" . $this->session->flashdata('msgLogin') . "</div>";
 	} ?>

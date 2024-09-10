@@ -52,6 +52,38 @@ class BlogForm extends CI_Controller
 		}
 	}
 
+	public function update() {
+		if (isset($_SESSION['userName'])) {
+			$this->form_validation->set_rules('title', 'Titlte', 'required');
+			$this->form_validation->set_rules('description', 'Description', 'required');
+
+			$id = $this->input->post('blog_id', TRUE);
+			$data = array(
+				'blog_title' => $this->input->post('title', TRUE),
+				'blog_dec' => $this->input->post('description', TRUE),
+				'status' => $this->input->post('status', TRUE)
+			);
+
+			$this->load->model('Model_blog');
+			if ($this->form_validation->run() == FALSE) {
+				$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
+				$this->load->view('editForm');
+			} else {
+				$response = $this->Model_blog->update_blog($id, $data);
+				if ($response) {
+					$this->session->set_flashdata('blogmsg', "Blog Update successfully");
+					redirect('dashboard');
+				} else {
+					$this->session->set_flashdata('blogmsgEdit', "Blog Update unsuccessful");
+					redirect('editform');
+				}
+			}
+		}else {
+			redirect('login');
+		}
+
+	}
+
     public function delete($id)
 	{
 		$this->load->model('Model_blog');
