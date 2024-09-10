@@ -80,14 +80,14 @@
                                                     <td>" . (($value['status'] == 1) ? 'Publish' : 'Unpublish') . "</td>
                                                     <td>" . $value['updated_time'] . "</td>
                                                     <td>
-                                                        <a href=\"<?php echo site_url('updateBlog/3'); ?>\">
+                                                        <a href='".site_url('/updateBlog/'.$value['id'])."'>
                                                         <button type=\"button\" class=\"btn btn-danger btn-sm px-3\">
                                                             <i class=\"bi bi-box-arrow-up-right\"></i>
                                                         </button>
                                                         </a>
                                                     </td>
                                                     <td>
-                                                        <a href=\"#.\" class=\"delete\" data-id='" . $value['id'] . "'>
+                                                        <a href=\"\">
                                                         <button type=\"button\" class=\"btn btn-danger px-3\">
                                                             <i class=\"bi bi-trash-fill\"></i>
                                                         </button>

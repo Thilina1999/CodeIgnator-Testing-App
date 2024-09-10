@@ -42,8 +42,15 @@ class BlogForm extends CI_Controller
     }
 
     public function edit($id)   {
-        // print_r($id);
-    }
+		if (isset($_SESSION['userName'])) {
+			$this->load->model('Model_blog');
+			$query = $this->Model_blog->view_blog_by_id($id);
+			$data['editData'] = $query->result_array();
+			$this->load->view('editform', $data);
+		} else {
+			redirect('login');
+		}
+	}
 
     public function delete($id)
 	{

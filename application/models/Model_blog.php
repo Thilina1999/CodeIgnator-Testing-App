@@ -19,4 +19,8 @@ class Model_blog extends CI_Model
 		return $this->db->query("DELETE FROM `article` WHERE id = $id");
 	}
 
+	function view_blog_by_id($id) {
+		return $this->db->query("SELECT * FROM `article` WHERE id = $id ORDER BY blog_title ASC");
+	}
+
 }
